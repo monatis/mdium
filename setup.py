@@ -12,7 +12,7 @@ setup(
         name='mdium',
         version=__version__,
         description='Publish your markdown to Medium, from the CLI',
-        url='https://github.com/icyphox/mdium',
+        url='https://github.com/monatis/mdium',
         license='MIT',
         packages=['mdium'],
         install_requires=[
