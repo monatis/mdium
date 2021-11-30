@@ -17,7 +17,7 @@ def init(token):
             'token': token,
             'id': user_data['id']
            }
-    with open(os.path.expanduser('~/.mdium'), 'w') as f:
+    with open(os.path.expanduser('~/.mdium'), 'w', encoding='utf8') as f:
         json.dump(conf, f)
 
     print('Saved token and author ID at {}'.format(os.path.expanduser('~/.mdium')))
@@ -25,7 +25,7 @@ def init(token):
 
 def read_conf():
     try:
-        with open(os.path.expanduser('~/.mdium'), 'r') as f:
+        with open(os.path.expanduser('~/.mdium'), 'r', encoding='utf8') as f:
             conf = json.load(f)
             return conf
     except FileNotFoundError:
@@ -36,7 +36,7 @@ def read_conf():
 def publish(mdfile):
     conf = read_conf()
     try:
-        with open(mdfile, 'r') as f:
+        with open(mdfile, 'r', encoding='utf8') as f:
             content = frontmatter.load(f)
     except FileNotFoundError:
         print('error: the file specified was not found')
